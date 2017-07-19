@@ -3,7 +3,7 @@
  */
 // create drop down with choices
 const showDropDown = (divStr, elementStr, category) => {
-    console.log("In showDropDown");
+    //console.log("in showDropDown")
     showArea(divStr);
     let element = document.getElementsByClassName(elementStr);
     // get choices from db. Mocked for now.
@@ -68,6 +68,6 @@ function getJobFieldChoices(category) {
 }
 // initialize with first drop-down
 (function appInit() {
+    //console.log("Inside the app init");
     showDropDown("main", "jobField", "mainChoices");
-    console.log("Inside the app init");
 })();
