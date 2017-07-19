@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="jobApp.css">
+    <title>this shows up in tab</title>
+</head>
+<body>
+<form>
+    <div class="main">
+        <h5>Choose your desired field:</h5>
+        <!-- db choices go here when I figure that out. For now, mock up -->
+        <select class = "jobField" onchange="showDropDown('sub', 'subField', this.options[this.selectedIndex].value)">
+        </select>
+        <br/>
+        <br/>
+    </div>
+    <div class="sub">
+        <!-- now show sub-choices based on first pick -->
+        <h5>Choose your desired sub-field:</h5>
+        <select class = "subField">
+        </select>
+    </div>
+</form>
+  <script src="jobApp.js"></script>
+</body>
+</html>
