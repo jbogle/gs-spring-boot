@@ -3,13 +3,14 @@
  */
 // create drop down with choices
 const showDropDown = (divStr, elementStr, category) => {
-    //console.log("in showDropDown")
+    console.log("in showDropDown")
     showArea(divStr);
-    let element = document.getElementsByClassName(elementStr);
+    //let element = document.getElementsByClassName(elementStr);
+    //alert("element is: " + element[0]);
     // get choices from db. Mocked for now.
-    let jobChoices = getJobFieldChoices(category);
+   // let jobChoices = getJobFieldChoices(category);
     // load the drop-down on the form with choices
-    loadChoices(element[0], jobChoices);
+    //loadChoices(element[0], jobChoices);
 }
 
 // make the areas visible when we come to them
@@ -66,8 +67,32 @@ function getJobFieldChoices(category) {
             break;
     }
 }
+
+// probably a better way to do this
+const showSubmit = () => {
+    let element = document.getElementsByClassName("button");
+    if (getComputedStyle(element[0]).visibility === "hidden") {
+        element[0].style.visibility = "visible";
+    }
+}
+
+
+
+const getJobsMain = () => {
+    "use strict";
+    // need to map url to java method
+    let url = "??"; // java method: chemeservice.getJobsMain
+    fetch(url).then(function(response) {
+        response.text().then(function(text) {
+            alert(text);
+        });
+    });
+}
+
+
+
 // initialize with first drop-down
 (function appInit() {
-    //console.log("Inside the app init");
+    console.log("Inside the app init");
     showDropDown("main", "jobField", "mainChoices");
 })();

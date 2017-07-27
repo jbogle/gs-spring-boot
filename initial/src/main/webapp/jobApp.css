@@ -1,3 +1,8 @@
+* {
+    box-sizing: border-box;  /* elements include border and padding in their total width & height */
+}
 .main,
-.sub {    visibility: hidden;
+.sub,
+.button {
+    visibility: hidden;
 }

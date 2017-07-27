@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="jobApp.css">
+    <title>Chem E app</title>
+</head>
+<body>
+
+<form action="/saveJobChoice" method="post" commandName="chemejobform" >
+    <div class="main">
+        <h5>Choose your desired field:</h5>
+        <p4>${mainfield}</p4>
+        <input type="text" path=${mainfield} >here</input>
+
+    </div>
+</form>
+<!--
+<form action="/saveJobChoice" method="post" modelAttribute="chemejobform">
+    <div class="main">
+        <h5>Choose your desired field:</h5>
+       <select class = "jobField" path="mainField" onchange="showDropDown('sub', 'subField', this.options[this.selectedIndex].value)">
+           <option value="" label="..." />
+           <options items="${jobs}" />
+        </select>
+        <br/>
+        <br/>
+    </div>
+-->
+<!--
+    <div class="sub">
+        &lt;!&ndash; now show sub-choices based on first pick &ndash;&gt;
+        <h5>Choose your desired sub-field:</h5>
+        <select class = "subField" path="subField" onchange="showSubmit()">
+        </select>
+        <br/>
+        <br/>
+    </div>
+    <div>
+        <input class="button" type="submit" value="Submit">
+    </div>
+-->
+</form>
+<script src="jobApp.js"></script>
+</body>
+</html>
