@@ -5,18 +5,19 @@
 const showDropDown = (divStr, elementStr, category) => {
     console.log("in showDropDown")
     showArea(divStr);
-    //let element = document.getElementsByClassName(elementStr);
-    //alert("element is: " + element[0]);
+    let element = document.getElementsByClassName(elementStr);
+    alert("element is: " + element[0]);
     // get choices from db. Mocked for now.
-   // let jobChoices = getJobFieldChoices(category);
+    let jobChoices = getJobFieldChoices(category);
     // load the drop-down on the form with choices
-    //loadChoices(element[0], jobChoices);
+    loadChoices(element[0], jobChoices);
 }
 
 // make the areas visible when we come to them
 const showArea = (divStr) => {
     "use strict";
     let element = document.getElementsByClassName(divStr);
+    alert("element for class: " + divStr + " is: " + element);
     // we set default to hidden. See if default is still on
     if (divStr === "main" && getComputedStyle(element[0]).visibility === "hidden") {
         // Show first drop down on startup
@@ -80,6 +81,7 @@ const showSubmit = () => {
 
 const getJobsMain = () => {
     "use strict";
+    alert("in getJobsMain");
     // need to map url to java method
     let url = "??"; // java method: chemeservice.getJobsMain
     fetch(url).then(function(response) {
@@ -89,10 +91,8 @@ const getJobsMain = () => {
     });
 }
 
-
-
 // initialize with first drop-down
 (function appInit() {
     console.log("Inside the app init");
-    showDropDown("main", "jobField", "mainChoices");
+    //showDropDown("main", "jobField", "mainChoices");
 })();

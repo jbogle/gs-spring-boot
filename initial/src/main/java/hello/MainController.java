@@ -15,13 +15,16 @@ public class MainController {
     public ChemERepository chemERepository;
 
     /**
-     *  When invoked from a browser or using curl on the command line, the index method returns pure text. That’s because
-     *  @RestController combines @Controller and @ResponseBody, two annotations that results in web requests returning data rather than a view.
+     *  When invoked from a browser or using curl on the command line, the textOnly method returns pure text. That’s because
+     *  @RestController combines @Controller and @ResponseBody, two annotations that results in web requests returning data
+     *  rather than a view.
      */
+
     @RequestMapping("/textOnly")
     public String textOnly() {
-        chemERepository.findAndPrintAll();
-        return "Greetings from Spring Boot!  (Chem E jobs are printed on console)";
-    }
+        //chemERepository.findAndPrintAll();
+        //return "Greetings from Spring Boot!  (Chem E jobs are printed on console)";
+        return "in MainController.textOnly\n";    }
+
 }
 
