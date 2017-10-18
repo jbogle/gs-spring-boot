@@ -6,9 +6,10 @@ package hello;
  */
 public class ChemEJob {
 
-    private Integer id;
+    //private Integer id;
     private String field;
 
+/*
     public Integer getId() {
         return id;
     }
@@ -16,6 +17,7 @@ public class ChemEJob {
     public void setId(Integer id) {
         this.id = id;
     }
+*/
 
     public String getField() {
         return field;

@@ -16,25 +16,10 @@ public class ChemERepository {
     @Autowired
     protected JdbcTemplate jdbcTemplate;
 
-    public void findAndPrintAll() {
+    public List<ChemEJob> getJobs() {
 
-        List<ChemEJob> jobs = jdbcTemplate.query("select * from chemEJob", new ChemEJobRowMapper());
-        for (ChemEJob j : jobs)
-        {
-            System.out.println(j.getField());
-        }
-    }
-
-/*
-    public List<String> fetchJobs() {
-        List<String> jobs = new ArrayList<>();
-        jobs.add("energy");
-        jobs.add("food");
-        jobs.add("pharmaceuticals");
-        jobs.add("miscellaneous");
-
+        List<ChemEJob> jobs = jdbcTemplate.query("select field from chemEJob", new ChemEJobRowMapper());
         return jobs;
     }
-*/
 
 }

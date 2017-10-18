@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 
 /**
@@ -27,37 +28,14 @@ public class AppController {
     }
 
 
-
-/*  Using this with React front end, this method gets called, but 404 is returned.
-    Suspect the 'view' isn't correct. Look at View object, my ViewResolver, etc.
-    Not even sure I want a 'view' though, so.....
-
-    @RequestMapping(method = RequestMethod.GET, value = "/fetchJobs")
-    public ModelAndView fetchJobs() {
-        System.out.println("in /fetchJobs");
-
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("JobsData.js");
-
-        ChemEJobForm form = new ChemEJobForm();
-        form.setMainfield("got it");
-
-        modelAndView.addObject("form", form);
-
-        return modelAndView;
-    }
-    */
-
     @ResponseBody
     @RequestMapping(method = RequestMethod.GET, value = "/fetchJobs")
     public List<String> fetchJobs() {
         System.out.println("in /fetchJobs");
 
-        List<String> jobs = new ArrayList<>();
-        jobs.add("try");
-        jobs.add("this");
+        return chemERepository.getJobs().stream().map( job ->  job.getField())
+                .collect(Collectors.toList());
 
-        return jobs;
     }
 
 }
